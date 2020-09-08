@@ -177,9 +177,11 @@
 }
 
 /**
- 1.1 加载资源，手动播放
+ 1.0.2
+    steamPlayer内存泄露
+ 
  */
 + (NSString *)getVersion {
-    return @"1.1.0";
+    return @"1.0.2";
 }
 @end

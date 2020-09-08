@@ -71,7 +71,7 @@
     [NSNotificationCenter.defaultCenter addObserverForName:YZPlayerStatusDidChangeNotification object:_player queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         __strong MSBArtStreamPlayer *strongSelf = weakSelf;
         if (note.object != strongSelf.player) { return; }
-        self.tStatus = [[note.userInfo valueForKey:@"PlayerStatus"] intValue];
+        strongSelf.tStatus = [[note.userInfo valueForKey:@"PlayerStatus"] intValue];
         MSBArtPlaybackStatus oldStatus = strongSelf.videoStatus;
         NSError *error = nil;
         switch (strongSelf.tStatus) {

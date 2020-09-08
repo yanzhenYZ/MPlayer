@@ -148,6 +148,8 @@
  1.0.1
     修改MSB header search path
     Swift编译报错
+ 1.0.2
+    steamPlayer内存泄露
  
  */
 + (NSString *)getVersion {
