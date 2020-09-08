@@ -106,7 +106,7 @@
                 break;
             case YZPlayerStatusStopped:
                 strongSelf.videoStatus = MSBAIPlaybackStatusEnded;
-                [self stopTimer];
+                [strongSelf stopTimer];
                 break;
             case YZPlayerStatusError: {
                 strongSelf.videoStatus = MSBArtPlaybackStatusError;

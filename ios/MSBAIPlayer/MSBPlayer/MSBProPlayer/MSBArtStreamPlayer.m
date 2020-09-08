@@ -32,7 +32,15 @@
 @synthesize audioDataBlock = _audioDataBlock;
 @synthesize videoDataBlock = _videoDataBlock;
 
-- (void)dealloc {
+- (void)dealloc
+{
+    if (NSThread.isMainThread) {
+        [_player.view removeFromSuperview];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_player.view removeFromSuperview];
+        });
+    }
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
@@ -94,6 +102,7 @@
                 strongSelf.videoStatus = MSBArtPlaybackStatusSeeking;
                 break;
             case YZPlayerStatusStopped:
+                [strongSelf stopTimer];
                 strongSelf.videoStatus = MSBArtPlaybackStatusEnded;
                 break;
             case YZPlayerStatusError: {

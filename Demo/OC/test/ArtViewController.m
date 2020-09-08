@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *smallPlayer;
 @property (nonatomic, strong) MSBArtPlayer *player;
 @property (nonatomic, strong) CIContext *context;
+@property (nonatomic, assign) int index;
 @end
 
 @implementation ArtViewController
@@ -39,12 +40,13 @@
 }
 
 - (void)playVideo {
-    NSString *path = [NSBundle.mainBundle pathForResource:@"3" ofType:@"mp4"];
+    NSString *pre = [NSString stringWithFormat:@"%d", ++_index];
+    NSString *path = [NSBundle.mainBundle pathForResource:pre ofType:@"mp4"];
     NSURL *pathUrl = [NSURL fileURLWithPath:path];
     
     NSURL *url = [NSURL URLWithString:@"http://39.107.116.40/res/tpl/default/file/guoke.mp4"];
     
-    _player = [[MSBArtPlayer alloc] initWithURL:url mode:MSBVideoDecoderModeToolBoxSync];
+    _player = [[MSBArtPlayer alloc] initWithURL:pathUrl mode:MSBVideoDecoderModeDisplayLayer];
     _player.playerView.frame = self.view.bounds;
     [self.view insertSubview:_player.playerView atIndex:0];
     
@@ -52,6 +54,9 @@
     [_player play];
     _player.playbackStatus = ^(MSBArtPlaybackStatus status, NSError *error) {
         NSLog(@"22 playbackStatus: %ld:%@", (long)status, error);
+        if (status == MSBArtPlaybackStatusEnded) {
+            [weakSelf playVideo];
+        }
     };
     
     _player.playbackTime = ^(NSTimeInterval time, NSTimeInterval duration) {

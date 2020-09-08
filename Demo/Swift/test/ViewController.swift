@@ -48,7 +48,7 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     func playVideo() {
-        let path = Bundle.main.path(forResource: "1", ofType: "mp4")
+        let path = Bundle.main.path(forResource: index.description, ofType: "mp4")
         
         let url = URL(fileURLWithPath: path!)
 //        let url = URL(string: "http://39.107.116.40/res/tpl/default/file/guoke.mp4")
@@ -75,12 +75,12 @@ private extension ViewController {
             }
             print(status.rawValue, "end")
             if status == .ended {
-//                self.player?.stop()
-//                self.player = nil
-//                self.index += 1
-//                if self.index < 12 {
-//                    self.playVideo()
-//                }
+                self.player?.stop()
+                self.player = nil
+                self.index += 1
+                if self.index < 12 {
+                    self.playVideo()
+                }
             }
         }
                 
