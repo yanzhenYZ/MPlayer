@@ -1,0 +1,12 @@
+.DS_Store
+xcuserdata/
+xcshareddata/
+Pods/
+Podfile.lock
+temps/
+build/
+mp4/
+Frameworks/
+*.a
+libyuv/
+MSBAVMedia/
