@@ -839,9 +839,9 @@ static int decode_video(Ijk_VideoToolBox_Opaque* context, AVCodecContext *avctx,
         context->vt_session = vtbsession_create(context);
         if (!context->vt_session)
             return -1;
-
-        if ((context->m_buffer_deep > 0) &&
-            ff_avpacket_i_or_idr(&context->m_buffer_packet[0], context->idr_based_identified) == true ) {
+        /**add by yanzhen 2020-09-09*/
+        if ((context->m_buffer_deep > 0) /*&&
+            ff_avpacket_i_or_idr(&context->m_buffer_packet[0], context->idr_based_identified) == true */) {
             for (int i = 0; i < context->m_buffer_deep; i++) {
                 AVPacket* pkt = &context->m_buffer_packet[i];
                 ret = decode_video_internal(context, avctx, pkt, got_picture_ptr);

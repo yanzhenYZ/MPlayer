@@ -150,9 +150,11 @@
     Swift编译报错
  1.0.2
     steamPlayer内存泄露
+ 1.0.3
+    2020-09-09-后台之后没有声音，后台回来可能绿屏
  
  */
 + (NSString *)getVersion {
-    return @"1.0.1";
+    return @"1.0.3";
 }
 @end
