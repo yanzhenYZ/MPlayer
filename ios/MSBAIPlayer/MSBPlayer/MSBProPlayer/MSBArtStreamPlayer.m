@@ -170,6 +170,8 @@
         _shutDown = YES;
         [self stopTimer];
         [_player shutdown];
+        [_avMedia stop];
+        _avMedia = nil;
     }
 }
 

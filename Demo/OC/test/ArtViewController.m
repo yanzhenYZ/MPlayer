@@ -41,12 +41,16 @@
 
 - (void)playVideo {
     NSString *pre = [NSString stringWithFormat:@"%d", ++_index];
+#if 1
     NSString *path = [NSBundle.mainBundle pathForResource:pre ofType:@"mp4"];
+#else
+    NSString *path = [NSBundle.mainBundle pathForResource:@"output" ofType:@"mp4"];
+#endif
     NSURL *pathUrl = [NSURL fileURLWithPath:path];
     
     NSURL *url = [NSURL URLWithString:@"http://39.107.116.40/res/tpl/default/file/guoke.mp4"];
     
-    _player = [[MSBArtPlayer alloc] initWithURL:pathUrl mode:MSBVideoDecoderModeDisplayLayer];
+    _player = [[MSBArtPlayer alloc] initWithURL:pathUrl mode:MSBVideoDecoderModeSoftware];
     _player.playerView.frame = self.view.bounds;
     [self.view insertSubview:_player.playerView atIndex:0];
     
@@ -55,6 +59,7 @@
     _player.playbackStatus = ^(MSBArtPlaybackStatus status, NSError *error) {
         NSLog(@"22 playbackStatus: %ld:%@", (long)status, error);
         if (status == MSBArtPlaybackStatusEnded) {
+            [weakSelf.player stop];
             [weakSelf playVideo];
         }
     };
@@ -66,7 +71,7 @@
     };
     
     _player.loadedTime = ^(NSTimeInterval time, NSTimeInterval duration) {
-        NSLog(@"44 loadedTime: %f/%f", time, duration);
+//        NSLog(@"44 loadedTime: %f/%f", time, duration);
     };
     
     
@@ -75,9 +80,9 @@
 //    };
     
     
-    _player.videoDataBlock = ^(CVPixelBufferRef pixelBuffer) {
-        [weakSelf displayVideo:pixelBuffer];
-    };
+//    _player.videoDataBlock = ^(CVPixelBufferRef pixelBuffer) {
+//        [weakSelf displayVideo:pixelBuffer];
+//    };
     
     
 //    _player.yuvDataBlock = ^(int width, int height, NSData *data) {
