@@ -179,6 +179,7 @@
 /**
  1.0.2
     steamPlayer内存泄露
+ 1.0.3 Apple Player无网络加载失败
  
  */
 + (NSString *)getVersion {

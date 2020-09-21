@@ -43,6 +43,6 @@
 - (void)resume;
 - (void)stop;
 - (void)seekToTime:(NSTimeInterval)time;
-
+//1.0.3
 + (NSString *)getVersion;
 @end

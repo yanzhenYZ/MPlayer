@@ -50,7 +50,7 @@
     
     NSURL *url = [NSURL URLWithString:@"http://39.107.116.40/res/tpl/default/file/guoke.mp4"];
     
-    _player = [[MSBArtPlayer alloc] initWithURL:url mode:MSBVideoDecoderModeToolBoxSync];
+    _player = [[MSBArtPlayer alloc] initWithURL:url mode:MSBVideoDecoderModeSoftware];
     _player.playerView.frame = self.view.bounds;
     [self.view insertSubview:_player.playerView atIndex:0];
     
@@ -78,7 +78,11 @@
 //    _player.audioDataBlock = ^(int sampleRate, int channels, void *data, int size) {
 //        NSLog(@"55 audioDataBlock: %d, %d, %d", sampleRate, channels, size);
 //    };
-    
+    /**
+     软件解码 视频帧播放 - 40%
+     软件解码 视频帧    - 23%
+     软件解码          - 19%
+     */
     
     _player.videoDataBlock = ^(CVPixelBufferRef pixelBuffer) {
         [weakSelf displayVideo:pixelBuffer];

@@ -50,23 +50,23 @@ private extension ViewController {
     func playVideo() {
         let path = Bundle.main.path(forResource: index.description, ofType: "mp4")
         
-        let url = URL(fileURLWithPath: path!)
-//        let url = URL(string: "http://39.107.116.40/res/tpl/default/file/guoke.mp4")
+//        let url = URL(fileURLWithPath: path!)
+        let url = URL(string: "http://39.107.116.40/res/tpl/default/file/guoke.mp4")
             //URL(string: "https://xiaoxiong-private.oss-cn-hangzhou.aliyuncs.com/courseware/product/temp/0ac7c090c4d611ea8ad70b2b8db29493.mp4")
         
         
 //        player = MSBAIApplePlayer(url: url)
 //        player = MSBAIPlayer(url: url)
-        player = MSBAIPlayer(url: url, mode: .toolBoxSync)
+        player = MSBAIPlayer(url: url, mode: .software)
         player?.videoGravity = .resizeAspect
         player?.attach(to: view)
     
-        
+//        player?.play()
         player?.playerStatus = { [weak self] (status, error) in
             print("status:", status.rawValue, error)
             if status == .readyToPlay {
                 self?.player?.play()
-            }
+            }  
         }
         
         player?.playbackStatus = { [weak self] (status) in
@@ -99,7 +99,7 @@ private extension ViewController {
         }
         
         player?.loadedTime = { (time, duration) in
-//            print("load:", time, duration)
+            print("load:", time, duration)
         }
     }
 }

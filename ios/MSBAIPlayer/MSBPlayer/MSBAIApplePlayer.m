@@ -99,12 +99,12 @@
         if (_playbackStatus) {
             _playbackStatus(_videoStatus);
         }
+    } else if (reason == IJKMPMovieFinishReasonPlaybackError) {//yanzhen:_2020_09_21--Now:开始-无网络加载失败
+        NSError *error = note.userInfo[@"error"];
+        if (_player.playerStatus) {
+            _player.playerStatus(AVPlayerStatusFailed, error);
+        }
     }
-//    else if (reason == IJKMPMovieFinishReasonPlaybackError) {
-//        if ([_delegate respondsToSelector:@selector(player:stoppedWithError:)]) {
-//            [_delegate player:self stoppedWithError:note.userInfo[@"error"]];
-//        }
-//    }
 }
 
 #pragma mark - property
