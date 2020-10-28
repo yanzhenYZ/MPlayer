@@ -225,6 +225,9 @@
 
 
 - (void)play {
+    if (!_player.isReady) {
+        _player.shouldAutoplay = YES;
+    }
     [_player play];
 }
 

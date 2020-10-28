@@ -30,6 +30,7 @@
 		9B38F35424EFA1B500D5E192 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B38F35324EFA1B500D5E192 /* libz.tbd */; };
 		9B38F3F924EFBE7F00D5E192 /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B38F3E324EFBE7F00D5E192 /* libyuv.a */; };
 		9B3B7B0B24FFA79D002CD684 /* ArtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B7B0A24FFA79D002CD684 /* ArtViewController.m */; };
+		9B53C5B5254922AE00E5E3E9 /* 课程未达到解锁上限.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B53C5B4254922AE00E5E3E9 /* 课程未达到解锁上限.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		9B38F3F824EFBE7F00D5E192 /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = row.h; sourceTree = "<group>"; };
 		9B3B7B0924FFA79D002CD684 /* ArtViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtViewController.h; sourceTree = "<group>"; };
 		9B3B7B0A24FFA79D002CD684 /* ArtViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtViewController.m; sourceTree = "<group>"; };
+		9B53C5B4254922AE00E5E3E9 /* 课程未达到解锁上限.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "课程未达到解锁上限.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				9B38F32324EF9CDB00D5E192 /* ViewController.m */,
 				9B3B7B0924FFA79D002CD684 /* ArtViewController.h */,
 				9B3B7B0A24FFA79D002CD684 /* ArtViewController.m */,
+				9B53C5B4254922AE00E5E3E9 /* 课程未达到解锁上限.mp3 */,
 				9B38F3E124EFBE7F00D5E192 /* libyuv */,
 				9B38F33524EF9D7000D5E192 /* mp4 */,
 				9B38F32524EF9CDB00D5E192 /* Main.storyboard */,
@@ -263,6 +266,7 @@
 				9B38F34C24EF9D7000D5E192 /* 11.mp4 in Resources */,
 				9B38F34A24EF9D7000D5E192 /* 3.mp4 in Resources */,
 				9B38F34E24EF9D7000D5E192 /* 8.mp4 in Resources */,
+				9B53C5B5254922AE00E5E3E9 /* 课程未达到解锁上限.mp3 in Resources */,
 				9B38F34924EF9D7000D5E192 /* 2.mp4 in Resources */,
 				9B38F34524EF9D7000D5E192 /* 4.mp4 in Resources */,
 				9B38F32C24EF9CDE00D5E192 /* LaunchScreen.storyboard in Resources */,
@@ -429,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R57G8CYRFG;
+				DEVELOPMENT_TEAM = 83G2F8FWQZ;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../Frameworks/player";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/test/libyuv/";
 				INFOPLIST_FILE = test/Info.plist;
@@ -446,7 +450,7 @@
 					"-framework",
 					MSBPlayer,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.msb.uitest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meishubao.art.aiclass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,7 +478,7 @@
 					"-framework",
 					MSBPlayer,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.msb.uitest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meishubao.art.aiclass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

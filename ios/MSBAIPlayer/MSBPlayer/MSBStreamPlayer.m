@@ -25,6 +25,9 @@
 
 @property (nonatomic, strong) MSBAVMedia *avMedia;
 @property (nonatomic, assign) MSBVideoDecoderMode mode;
+
+@property (nonatomic, assign) BOOL isReady;
+@property (nonatomic, assign) BOOL autoPlay;
 @end
 
 @implementation MSBStreamPlayer
@@ -87,8 +90,13 @@
         MSBAIPlaybackStatus oldStatus = strongSelf.videoStatus;
         switch (strongSelf.tStatus) {
             case YZPlayerStatusReady:
+                _isReady = YES;
                 if (strongSelf.playerStatus) {
                     strongSelf.playerStatus(AVPlayerStatusReadyToPlay, nil);
+                }
+                if (_autoPlay) {
+                    [self play];
+                    _autoPlay = NO;
                 }
                 return;
                 break;
@@ -332,6 +340,7 @@
 }
 
 - (void)play {
+    if (!_isReady) { _autoPlay = YES; }
     [_player play];
     if (!_timer) {
         [self startTimer];

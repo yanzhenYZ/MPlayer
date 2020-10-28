@@ -77,6 +77,7 @@
 @property (nonatomic, copy) void (^playbackTime)(NSTimeInterval time, NSTimeInterval duration);
 @property (nonatomic, copy) void (^loadedTime)(NSTimeInterval time, NSTimeInterval duration);
 @property (nonatomic, copy) void (^playerStatus)(AVPlayerStatus status, NSError *error);
+@property (nonatomic, assign) BOOL isReady;
 
 - (id)initWithContentURL:(NSURL *)aUrl;
 - (id)initWithContentURLString:(NSString *)aUrl;

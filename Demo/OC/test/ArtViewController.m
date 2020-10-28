@@ -42,7 +42,7 @@
 - (void)playVideo {
     NSString *pre = [NSString stringWithFormat:@"%d", ++_index];
 #if 1
-    NSString *path = [NSBundle.mainBundle pathForResource:pre ofType:@"mp4"];
+    NSString *path = [NSBundle.mainBundle pathForResource:@"课程未达到解锁上限" ofType:@"mp3"];
 #else
     NSString *path = [NSBundle.mainBundle pathForResource:@"output" ofType:@"mp4"];
 #endif
@@ -50,7 +50,7 @@
     
     NSURL *url = [NSURL URLWithString:@"http://39.107.116.40/res/tpl/default/file/guoke.mp4"];
     
-    _player = [[MSBArtPlayer alloc] initWithURL:url mode:MSBVideoDecoderModeSoftware];
+    _player = [[MSBArtPlayer alloc] initWithURL:pathUrl mode:MSBVideoDecoderModeSoftware];
     _player.playerView.frame = self.view.bounds;
     [self.view insertSubview:_player.playerView atIndex:0];
     
@@ -71,7 +71,7 @@
     };
     
     _player.loadedTime = ^(NSTimeInterval time, NSTimeInterval duration) {
-//        NSLog(@"44 loadedTime: %f/%f", time, duration);
+        NSLog(@"44 loadedTime: %f/%f", time, duration);
     };
     
     

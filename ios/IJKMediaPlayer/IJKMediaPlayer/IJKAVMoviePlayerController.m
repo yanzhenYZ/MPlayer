@@ -786,6 +786,7 @@ static IJKAVMoviePlayerController* instance;
         AVPlayerStatus playerStatus = [[change objectForKey:@"new"] integerValue];
         if (playerStatus != old) {
             if (playerStatus == AVPlayerStatusReadyToPlay) {
+                _isReady = YES;
                 [self addTimeObserver];
             }
             if (_playerStatus) {

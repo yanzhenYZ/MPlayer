@@ -91,7 +91,7 @@ private extension ViewController {
         }
         
         player?.audioDataBlock = { (sampleRate, channels, data, size) in
-            print(1234, sampleRate, channels, data, size);
+//            print(1234, sampleRate, channels, data, size);
         }
         
         player?.videoDataBlock = { [weak self] (buffer) in

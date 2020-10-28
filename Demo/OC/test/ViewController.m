@@ -43,23 +43,29 @@
     NSLog(@"0000---%d:%d", CVPixelBufferGetBytesPerRow(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
     
 }
-
+//file:///private/var/containers/Bundle/Application/81B5E9D2-5F46-4941-BDBF-B7ACB418F011/ArtAIClassSwiftTest.app/%E8%AF%BE%E7%A8%8B%E6%9C%AA%E8%BE%BE%E5%88%B0%E8%A7%A3%E9%94%81%E4%B8%8A%E9%99%90.mp3
 - (void)playVideo {
-    NSString *path = [NSBundle.mainBundle pathForResource:@"3" ofType:@"mp4"];
-    NSURL *pathUrl = [NSURL fileURLWithPath:path];
+//    NSString *path = [NSBundle.mainBundle pathForResource:@"3" ofType:@"mp4"];
+    NSString *path = [NSBundle.mainBundle pathForResource:@"课程未达到解锁上限" ofType:@"mp3"];
+    NSURL *pathUrl1 = [NSURL fileURLWithPath:path];
+    NSURL *pathUrl = [NSURL URLWithString:path];
+    
+    NSLog(@"123,%@:%@", pathUrl, pathUrl1);
     
     NSURL *url = [NSURL URLWithString:@"http://39.107.116.40/res/tpl/default/file/guoke.mp4"];
     
-    _player = [[MSBAIPlayer alloc] initWithURL:pathUrl mode:MSBVideoDecoderModeDisplayLayer];
+    _player = [[MSBAIPlayer alloc] initWithURL:pathUrl1 mode:MSBVideoDecoderModeDisplayLayer];
     [_player attachToView:self.view];
     
+    [_player play];
+    
     __weak ViewController *weakSelf = self;
-    _player.playerStatus = ^(AVPlayerStatus status, NSError *error) {
-        NSLog(@"11 playerStatus: %ld : %@", (long)status, error);
-        if (status == AVPlayerStatusReadyToPlay) {
-            [weakSelf.player play];
-        }
-    };
+//    _player.playerStatus = ^(AVPlayerStatus status, NSError *error) {
+//        NSLog(@"11 playerStatus: %ld : %@", (long)status, error);
+//        if (status == AVPlayerStatusReadyToPlay) {
+//            [weakSelf.player play];
+//        }
+//    };
     
     
     _player.playbackStatus = ^(MSBAIPlaybackStatus status) {

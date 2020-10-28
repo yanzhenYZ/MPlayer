@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HQx-kO-FYj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +48,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="YQR-Y1-N5c" firstAttribute="top" secondItem="4fJ-KK-bTu" secondAttribute="top" id="2DS-g1-kPr"/>
                                     <constraint firstItem="0dQ-ve-Rjr" firstAttribute="leading" secondItem="4fJ-KK-bTu" secondAttribute="leading" constant="5" id="Blu-Mr-a7A"/>
@@ -68,7 +69,8 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="4gg-W1-IIf"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="frh-zq-dD8" firstAttribute="trailing" secondItem="4gg-W1-IIf" secondAttribute="trailing" constant="-10" id="0an-I9-p3A"/>
                             <constraint firstItem="4fJ-KK-bTu" firstAttribute="leading" secondItem="4gg-W1-IIf" secondAttribute="leading" id="7WK-EX-vsy"/>
@@ -76,7 +78,6 @@
                             <constraint firstItem="4fJ-KK-bTu" firstAttribute="trailing" secondItem="4gg-W1-IIf" secondAttribute="trailing" id="WJh-ls-lO0"/>
                             <constraint firstItem="frh-zq-dD8" firstAttribute="top" secondItem="4gg-W1-IIf" secondAttribute="top" id="cev-TX-hmN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4gg-W1-IIf"/>
                     </view>
                     <connections>
                         <outlet property="slider" destination="0dQ-ve-Rjr" id="7zV-cz-B1M"/>
@@ -127,7 +128,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="1q2-yN-L2q"/>
                                     <constraint firstItem="bWU-u5-PR0" firstAttribute="top" secondItem="1yY-uV-E3I" secondAttribute="top" id="BnC-Nj-wdZ"/>
@@ -148,7 +149,8 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="nGv-SW-PbW"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="1yY-uV-E3I" firstAttribute="trailing" secondItem="nGv-SW-PbW" secondAttribute="trailing" id="ECh-m5-hHz"/>
                             <constraint firstItem="1yY-uV-E3I" firstAttribute="leading" secondItem="nGv-SW-PbW" secondAttribute="leading" id="FdK-Kq-jVA"/>
@@ -156,7 +158,6 @@
                             <constraint firstItem="nGv-SW-PbW" firstAttribute="bottom" secondItem="1yY-uV-E3I" secondAttribute="bottom" constant="5" id="oMh-3j-5Mc"/>
                             <constraint firstItem="aQ2-UW-zhG" firstAttribute="top" secondItem="nGv-SW-PbW" secondAttribute="top" id="rPi-3T-C3c"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nGv-SW-PbW"/>
                     </view>
                     <connections>
                         <outlet property="slider" destination="Rbx-4P-670" id="lHI-Ve-AUV"/>
@@ -169,4 +170,12 @@
             <point key="canvasLocation" x="1058" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
